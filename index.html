@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ahorcado</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div>
+      <h1 class="titulo">Ahorcado</h1>
+      <button class="btn-iniciar" id="iniciar-juego">Iniciar juego</button>
+
+    </div>
+    <div>
+      <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Ingrese una palabra">
+      <button class="btn-agregarpalabra" id="nueva-palabra">Agregar nueva palabra</button> 
+    </div>
+    <div>
+      
+      <button class="btn-guardar" id="nueva-palabra">Guardar y empezar</button> 
+      <button class="btn-cancelar" id="cancelar">Cancelar</button> 
+      <button class="btn-nuevojuego" id="nuevojuego">Nuevo juego</button> 
+      <button class="btn-desistir" id="desistir">Desistir</button>
+
+    </div>
+
+    <div>    
+    <!--<img src="advertencia.png" style="vertical-align:middle;margin:230px 420px">
+    <p class="advertencia">Max. de 8 letras </p>-->
+    </div>
+
+    <canvas id="ahorcado" width="800" height="600"></canvas>
+        
+    <script src="ahorcado.js">
+      
+    </script>
+
+  </body>
+
+  <footer><br/>©2022 - Developed by <b>Cristhian Zamalloa</b> </footer>
+  
+</html>
