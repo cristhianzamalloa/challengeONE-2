@@ -5,13 +5,13 @@
 }
 
 .titulo {
-  padding: 15px;
+  padding: 50px;
   width: 94vw;
   margin: auto;
-  text-align: center;
+  text-align: left;
   color: whitesmoke;
   font-family: cursive;
-  font-size: 350%;
+  font-size: 380%;
   text-shadow: 0 0 0px #feec85, 2px -2px 3px #85c8fe, -4px -4px 5px #7dc5ff, 5px -10px 6px #6bb0ff, -5px -12px 8px #5ea9ff, 0 -15px 20px #5ca8ff, 2px -15px 20px #4da0ff;
 }
 
@@ -21,7 +21,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/*.btn-iniciar {
+.btn-iniciar {
   flex-direction: row;
   align-items: center;
   padding: 24px;
@@ -129,7 +129,7 @@ img {
   width: 15px;
   display: inline-block;
   left:  420px;
-}*/
+}
 
 .advertencia {
   

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 
   <head>
     <meta charset="UTF-8" />
@@ -8,32 +9,34 @@
     <title>Ahorcado</title>
     <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
-    <div>
+    
+    <div id=titulo>
       <h1 class="titulo">Ahorcado</h1>
-      <button class="btn-iniciar" id="iniciar-juego">Iniciar juego</button>
+    </div>
+    
+    <div id=principal>
+      <button class="btn-iniciar" type="button" id="buttonIniciar">Iniciar juego</button>
+      <button class="btn-agregarpalabra" type="button" id="buttonAgregarPalabra">Agregar Nueva Palabra</button> 
+    </div>
+    
+    <div id=nuevaPalabra>
+      <input class="text-input" type="text" maxlength="8" id="input-nueva-palabra" placeholder="Ingrese una palabra" style="text-transform: uppercase;" onkeypress="return establecerCaracteres(event)" >
+      <img src="advertencia.png" style="vertical-align:middle;margin:316px 420px">
+      <p class="advertencia">Max. de 8 letras </p>
+      <button class="btn-guardar" type="button" id="buttonGuardar">Guardar y empezar</button> 
+      <button class="btn-cancelar" type="button" id="buttonCancelar">Cancelar</button> 
+    </div>
 
-    </div>
-    <div>
-      <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Ingrese una palabra">
-      <button class="btn-agregarpalabra" id="nueva-palabra">Agregar nueva palabra</button> 
-    </div>
-    <div>
+    <div id=tablero>
       
-      <button class="btn-guardar" id="nueva-palabra">Guardar y empezar</button> 
-      <button class="btn-cancelar" id="cancelar">Cancelar</button> 
-      <button class="btn-nuevojuego" id="nuevojuego">Nuevo juego</button> 
-      <button class="btn-desistir" id="desistir">Desistir</button>
+      <canvas class="canvas" id="ahorcado"></canvas>
+      <button class="btn-nuevojuego" id="buttonNuevoJuego">Nuevo juego</button> 
+      <button class="btn-desistir" id="buttonDesistir">Desistir</button>
 
     </div>
-
-    <div>    
-    <!--<img src="advertencia.png" style="vertical-align:middle;margin:230px 420px">
-    <p class="advertencia">Max. de 8 letras </p>-->
-    </div>
-
-    <canvas class="canvas" id="ahorcado"></canvas>      
-        
+      
     <script src="ahorcado.js">
       
     </script>

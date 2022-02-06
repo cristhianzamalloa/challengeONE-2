@@ -1,3 +1,23 @@
+function establecerCaracteres(e) {
+
+	  var key = e.keyCode || e.which,
+      tecla = String.fromCharCode(key).toLowerCase(),
+      letras = "abcdefghijklmnopqrstuvwxyz",
+      especiales = [8, 37, 39, 46],
+      tecla_especial = false;
+
+    for (var i in especiales) {
+      if (key == especiales[i]) {
+        tecla_especial = true;
+        break;
+      }
+    }
+
+    if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+      return false;
+    }
+  }
+
 function dibujarBase() {
 	var pantalla = document.querySelector("canvas");
 	var pincel = pantalla.getContext("2d");
@@ -127,6 +147,75 @@ function dibujarPiernaDerecha() {
 
 }
 
+function irPrincipal() {
+
+	//commandos para ocultar y mostrar las páginas
+	document.getElementById("titulo").style.display = "";
+	document.getElementById("principal").style.display = "";
+	document.getElementById("nuevaPalabra").style.display = "none";
+	document.getElementById("tablero").style.display = "none";	
+	
+}
+
+function irTablero() {
+
+	document.getElementById("titulo").style.display = "";
+	document.getElementById("principal").style.display = "none";
+	document.getElementById("nuevaPalabra").style.display = "none";
+	document.getElementById("tablero").style.display = "";	
+}
+
+function activarBotonIniciarJuego() {
+
+	var buttonIniciar = document.querySelector('buttonIniciar');
+
+	irTablero();
+
+}
+
+function activarBotonAgregarPalabra() {
+
+	var buttonAgregarPalabra = document.querySelector('buttonAgregarPalabra');
+
+	document.getElementById("titulo").style.display = "";
+	document.getElementById("principal").style.display = "none";
+	document.getElementById("nuevaPalabra").style.display = "";
+	document.getElementById("tablero").style.display = "none";
+
+}
+
+function activarBotonCancelar() {
+
+	var buttonCancelar = document.querySelector('buttonCancelar');
+
+	irPrincipal();
+
+}
+
+function activarBotonDesistir() {
+
+	var buttonDesistir = document.querySelector('buttonDesistir');
+
+	irPrincipal();
+
+}
+
+function activarBotonNuevoJuego() {
+
+	var buttonNuevoJuego = document.querySelector('buttonNuevoJuego');
+
+	irTablero();
+
+}
+
+function activarBotonGuardar() {
+
+	var buttonGuardar = document.querySelector('buttonGuardar');
+
+	irTablero();
+
+}
+
 dibujarBase();
 dibujarAsta();
 dibujarCabecera();
@@ -137,3 +226,13 @@ dibujarBrazoIzquierdo();
 dibujarBrazoDerecho();
 dibujarPiernaIzquierda();
 dibujarPiernaDerecha();
+
+
+irPrincipal();
+
+buttonAgregarPalabra.onclick = activarBotonAgregarPalabra;
+buttonCancelar.onclick = activarBotonCancelar;
+buttonIniciar.onclick = activarBotonIniciarJuego;
+buttonDesistir.onclick = activarBotonDesistir;
+buttonNuevoJuego.onclick = activarBotonNuevoJuego;
+buttonGuardar.onclick = activarBotonGuardar;
