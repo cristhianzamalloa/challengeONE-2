@@ -187,12 +187,10 @@ img {
 
 canvas{
 
-  width: 294px;
-  height: 360px;
-  position: relative;
-  left: 530px;
-  top: -30px;
-  
+  position: absolute;
+  left: 420px;
+  top: 140px;
+  background-color: black;
 
 }
 

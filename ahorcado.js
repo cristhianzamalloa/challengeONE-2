@@ -23,10 +23,10 @@ function dibujarBase() {
 	var pincel = pantalla.getContext("2d");
 
 	pincel.beginPath();
-	pincel.moveTo(0,149);
-	pincel.lineTo(300,149);
+	pincel.moveTo(0,380);
+	pincel.lineTo(280,380);
 	pincel.strokeStyle = "white";
-	pincel.lineWidth = 3;
+	pincel.lineWidth = 5;
 	pincel.stroke();
 
 }
@@ -36,8 +36,8 @@ function dibujarAsta() {
 	var pincel = pantalla.getContext("2d");
 
 	pincel.beginPath();
-	pincel.moveTo(80,0);
-	pincel.lineTo(80,149);
+	pincel.moveTo(60,100);
+	pincel.lineTo(60,380);
 	pincel.strokeStyle = "white";
 	pincel.lineWidth = 5;
 	pincel.stroke();
@@ -49,10 +49,10 @@ function dibujarCabecera() {
 	var pincel = pantalla.getContext("2d");
 
 	pincel.beginPath();
-	pincel.moveTo(80,1);
-	pincel.lineTo(257,1);
+	pincel.moveTo(60,100);
+	pincel.lineTo(237,100);
 	pincel.strokeStyle = "white";
-	pincel.lineWidth = 3;
+	pincel.lineWidth = 5;
 	pincel.stroke();
 
 }
@@ -62,8 +62,8 @@ function dibujarGancho() {
 	var pincel = pantalla.getContext("2d");
 	
 	pincel.beginPath();
-	pincel.moveTo(257,0);
-	pincel.lineTo(257,20);
+	pincel.moveTo(237,100);
+	pincel.lineTo(237,120);
 	pincel.strokeStyle = "white";
 	pincel.lineWidth = 4.5;
 	pincel.stroke();
@@ -75,7 +75,7 @@ function dibujarCabeza() {
 	var pincel = pantalla.getContext("2d");
 
 	pincel.beginPath();
-	pincel.arc(257,31,10,0,2*Math.PI);
+	pincel.arc(237,140,20,0,2*Math.PI);
 	pincel.strokeStyle = "white";
 	pincel.lineWidth = 3;
 	pincel.stroke();
@@ -87,8 +87,8 @@ function dibujarCuerpo() {
 	var pincel = pantalla.getContext("2d");
 	
 	pincel.beginPath();
-	pincel.moveTo(257,40);
-	pincel.lineTo(257,100);
+	pincel.moveTo(237,160);
+	pincel.lineTo(237,290);
 	pincel.strokeStyle = "white";
 	pincel.lineWidth = 3;
 	pincel.stroke();
@@ -100,8 +100,8 @@ function dibujarBrazoIzquierdo() {
 	var pincel = pantalla.getContext("2d");
 	
 	pincel.beginPath();
-	pincel.moveTo(257,40);
-	pincel.lineTo(227,60);
+	pincel.moveTo(237,160);
+	pincel.lineTo(207,200);
 	pincel.strokeStyle = "white";
 	pincel.lineWidth = 3;
 	pincel.stroke();
@@ -113,8 +113,8 @@ function dibujarBrazoDerecho() {
 	var pincel = pantalla.getContext("2d");
 	
 	pincel.beginPath();
-	pincel.moveTo(257,40);
-	pincel.lineTo(287,60);
+	pincel.moveTo(237,160);
+	pincel.lineTo(267,200);
 	pincel.strokeStyle = "white";
 	pincel.lineWidth = 3;
 	pincel.stroke();
@@ -126,8 +126,8 @@ function dibujarPiernaIzquierda() {
 	var pincel = pantalla.getContext("2d");
 	
 	pincel.beginPath();
-	pincel.moveTo(257,100);
-	pincel.lineTo(227,120);
+	pincel.moveTo(237,290);
+	pincel.lineTo(207,330);
 	pincel.strokeStyle = "white";
 	pincel.lineWidth = 3;
 	pincel.stroke();
@@ -139,11 +139,27 @@ function dibujarPiernaDerecha() {
 	var pincel = pantalla.getContext("2d");
 	
 	pincel.beginPath();
-	pincel.moveTo(257,100);
-	pincel.lineTo(287,120);
+	pincel.moveTo(237,290);
+	pincel.lineTo(267,330);
 	pincel.strokeStyle = "white";
 	pincel.lineWidth = 3;
 	pincel.stroke();
+
+}
+
+//***  CONTINUAR ACA - DANDO PARAMETROS A LOS CUADRADOS
+function	dibujarCuadros(x,360,tamano,400) {
+
+		pincel.fillStyle = "blue";
+    pincel.fillRect(x, 360, tamano, tamanho)
+    pincel.fill();
+
+
+    if (numeroLetras	= 8) {
+
+
+    }
+
 
 }
 
@@ -207,14 +223,57 @@ function activarBotonNuevoJuego() {
 	irTablero();
 
 }
+//***
+function escogerPalabraSecreta () {
 
-function activarBotonGuardar() {
+	var palabraSecreta = palabras[Math.floor(Math.random()*palabras.length)];	
 
+	var numeroLetras = palabraSecreta.length;
+
+	var letraPalabra = palabraSecreta.split(""); //Para separar la palabra secreta en letras
+    
+    
+}
+
+function agregarInputs () {
+
+	//para agregar la palabra al Arraay	
+	var agregarPalabra = document.getElementById("palabra").value;
+
+	palabras.push(agregarPalabra); 
+
+	var palabrasTotales = "";
+
+	for (i = 0; i < palabras.length; i++) { 
+
+		palabrasTotales = palabrasTotales + palabras[i];
+
+	}
+
+	palabra.value = ""; //Para limpiar el input una vez que se guarda la palabra
+	
+	alert("La palabra (" + agregarPalabra.toUpperCase() + ") fue agregada");
+
+	//Para activar el botón guardar
 	var buttonGuardar = document.querySelector('buttonGuardar');
+
 
 	irTablero();
 
+	escogerPalabraSecreta();
+
 }
+
+
+
+
+var palabras = ['Alura', 'Oracle', 'Latam'];
+
+    
+
+
+
+
 
 dibujarBase();
 dibujarAsta();
@@ -235,4 +294,4 @@ buttonCancelar.onclick = activarBotonCancelar;
 buttonIniciar.onclick = activarBotonIniciarJuego;
 buttonDesistir.onclick = activarBotonDesistir;
 buttonNuevoJuego.onclick = activarBotonNuevoJuego;
-buttonGuardar.onclick = activarBotonGuardar;
+buttonGuardar.onclick = agregarInputs;
